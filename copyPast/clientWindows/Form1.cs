@@ -46,10 +46,10 @@ namespace clientWindows
         private void connect()
         {
             //Chech the IP's validity
-            Regex myRegex = new Regex(@"^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
-            Regex myRegex2 = new Regex(@"^([0-9]{1,4}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])$");
-            Regex myRegex3 = new Regex(@"^[a-zA-Z0-9]+$");
-            if (myRegex.IsMatch(this.ipBox.Text) && myRegex2.IsMatch(this.portBox.Text) && myRegex3.IsMatch(this.IDBox.Text)) {
+            Regex ipRegex = new Regex(@"^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
+            Regex portRegex = new Regex(@"^([0-9]{1,4}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])$");
+            Regex IDRegex = new Regex(@"^[a-zA-Z0-9]+$");
+            if (ipRegex.IsMatch(this.ipBox.Text) && portRegex.IsMatch(this.portBox.Text) && IDRegex.IsMatch(this.IDBox.Text)) {
                 try {
                     tcpClient = new TcpClient();
                     tcpClient.Connect(this.ipBox.Text, Int32.Parse(this.portBox.Text));

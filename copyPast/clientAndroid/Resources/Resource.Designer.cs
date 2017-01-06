@@ -41,6 +41,28 @@ namespace clientAndroid
 			}
 		}
 		
+		public partial class Color
+		{
+			
+			// aapt resource value: 0x7f040002
+			public const int my_black = 2130968578;
+			
+			// aapt resource value: 0x7f040000
+			public const int my_green = 2130968576;
+			
+			// aapt resource value: 0x7f040001
+			public const int my_white = 2130968577;
+			
+			static Color()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Color()
+			{
+			}
+		}
+		
 		public partial class Drawable
 		{
 			
@@ -53,6 +75,49 @@ namespace clientAndroid
 			}
 			
 			private Drawable()
+			{
+			}
+		}
+		
+		public partial class Id
+		{
+			
+			// aapt resource value: 0x7f080007
+			public const int IDBox = 2131230727;
+			
+			// aapt resource value: 0x7f080008
+			public const int connectButton = 2131230728;
+			
+			// aapt resource value: 0x7f080003
+			public const int ipBox = 2131230723;
+			
+			// aapt resource value: 0x7f080001
+			public const int linearLayout1 = 2131230721;
+			
+			// aapt resource value: 0x7f080000
+			public const int mainToolbar = 2131230720;
+			
+			// aapt resource value: 0x7f080009
+			public const int menu_preferences = 2131230729;
+			
+			// aapt resource value: 0x7f080005
+			public const int portBox = 2131230725;
+			
+			// aapt resource value: 0x7f080002
+			public const int textView7 = 2131230722;
+			
+			// aapt resource value: 0x7f080004
+			public const int textView8 = 2131230724;
+			
+			// aapt resource value: 0x7f080006
+			public const int textView9 = 2131230726;
+			
+			static Id()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Id()
 			{
 			}
 		}
@@ -73,14 +138,30 @@ namespace clientAndroid
 			}
 		}
 		
+		public partial class Menu
+		{
+			
+			// aapt resource value: 0x7f070000
+			public const int top_menus = 2131165184;
+			
+			static Menu()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Menu()
+			{
+			}
+		}
+		
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040001
-			public const int ApplicationName = 2130968577;
+			// aapt resource value: 0x7f050001
+			public const int ApplicationName = 2131034113;
 			
-			// aapt resource value: 0x7f040000
-			public const int Hello = 2130968576;
+			// aapt resource value: 0x7f050000
+			public const int Hello = 2131034112;
 			
 			static String()
 			{
@@ -88,6 +169,22 @@ namespace clientAndroid
 			}
 			
 			private String()
+			{
+			}
+		}
+		
+		public partial class Style
+		{
+			
+			// aapt resource value: 0x7f060000
+			public const int MyTheme = 2131099648;
+			
+			static Style()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Style()
 			{
 			}
 		}
