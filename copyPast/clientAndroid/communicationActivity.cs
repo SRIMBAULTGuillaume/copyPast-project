@@ -62,7 +62,7 @@ namespace clientAndroid
         public void onConnectButtonClick(object sender, System.EventArgs e)
         {
             var textBox = FindViewById<TextView>(Resource.Id.editText);
-
+            
             if (textBox.Text != "") {
                 sendMessage(textBox.Text);
                 newMessage(textBox.Text);
@@ -122,10 +122,17 @@ namespace clientAndroid
                 }
                 if (bytesRead == 0) {
                     //the client has disconnected from the server
+                    Toast.MakeText(this, "Internal server error", ToastLength.Short).Show();
                     break;
                 }
                 message = System.Text.Encoding.Unicode.GetString(messageByte, 0, bytesRead);
-                newMessage("Server speak : " + message);
+
+                var clipboard = (ClipboardManager)GetSystemService(ClipboardService);
+                var clip = ClipData.NewPlainText("Message from Copy/Past app", message);
+                clipboard.PrimaryClip = clip;
+                //Toast.MakeText(this, "Copied : " + message, ToastLength.Short).Show();
+
+                //newMessage("Server speak : " + message);
             }
             tcpClient.Close();
             Finish();
