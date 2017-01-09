@@ -82,35 +82,44 @@ namespace clientAndroid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f080007
-			public const int IDBox = 2131230727;
+			// aapt resource value: 0x7f08000a
+			public const int IDBox = 2131230730;
 			
-			// aapt resource value: 0x7f080008
-			public const int connectButton = 2131230728;
+			// aapt resource value: 0x7f08000b
+			public const int connectButton = 2131230731;
 			
-			// aapt resource value: 0x7f080003
-			public const int ipBox = 2131230723;
+			// aapt resource value: 0x7f080002
+			public const int editText = 2131230722;
 			
-			// aapt resource value: 0x7f080001
-			public const int linearLayout1 = 2131230721;
+			// aapt resource value: 0x7f080006
+			public const int ipBox = 2131230726;
+			
+			// aapt resource value: 0x7f080004
+			public const int linearLayout1 = 2131230724;
 			
 			// aapt resource value: 0x7f080000
 			public const int mainToolbar = 2131230720;
 			
-			// aapt resource value: 0x7f080009
-			public const int menu_preferences = 2131230729;
+			// aapt resource value: 0x7f08000c
+			public const int menu_preferences = 2131230732;
+			
+			// aapt resource value: 0x7f080008
+			public const int portBox = 2131230728;
+			
+			// aapt resource value: 0x7f080003
+			public const int sendButton = 2131230723;
+			
+			// aapt resource value: 0x7f080001
+			public const int textView = 2131230721;
 			
 			// aapt resource value: 0x7f080005
-			public const int portBox = 2131230725;
+			public const int textView7 = 2131230725;
 			
-			// aapt resource value: 0x7f080002
-			public const int textView7 = 2131230722;
+			// aapt resource value: 0x7f080007
+			public const int textView8 = 2131230727;
 			
-			// aapt resource value: 0x7f080004
-			public const int textView8 = 2131230724;
-			
-			// aapt resource value: 0x7f080006
-			public const int textView9 = 2131230726;
+			// aapt resource value: 0x7f080009
+			public const int textView9 = 2131230729;
 			
 			static Id()
 			{
@@ -126,7 +135,10 @@ namespace clientAndroid
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Main = 2130903040;
+			public const int Communication = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int Main = 2130903041;
 			
 			static Layout()
 			{

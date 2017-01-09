@@ -12,9 +12,6 @@ namespace clientAndroid
     [Activity(Label = "clientAndroid", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-        public TcpClient tcpClient;
-        public Stream stm;
-
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -43,31 +40,20 @@ namespace clientAndroid
             Regex portRegex = new Regex(@"^([0-9]{1,4}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])$");
             Regex IDRegex = new Regex(@"^[a-zA-Z0-9]+$");
             if (ipRegex.IsMatch(ipBox.Text) && portRegex.IsMatch(portBox.Text) && IDRegex.IsMatch(IDBox.Text)) {
-                //Connection
+                //Creating activity
                 try {
-
-                    tcpClient = new TcpClient();
-                    tcpClient.Connect(ipBox.Text, Int32.Parse(portBox.Text));
-                    stm = tcpClient.GetStream();
-                    sendMessage(IDBox.Text);
-
-                    Toast.MakeText(this, "Connection establish", ToastLength.Short).Show();
-
-                } catch (SocketException ex) {
-                    Toast.MakeText(this, "Connection error", ToastLength.Short).Show();
+                    var myNewActivity = new Android.Content.Intent(this, typeof(communicationActivity));
+                    myNewActivity.PutExtra("myTcpIP", ipBox.Text);
+                    myNewActivity.PutExtra("myTcpPort", portBox.Text);
+                    myNewActivity.PutExtra("myTcpID", IDBox.Text);
+                    StartActivity(myNewActivity);
                 } catch (Exception ex) {
-                    Toast.MakeText(this, "Error during connection", ToastLength.Short).Show();
+                    Toast.MakeText(this, "Error during activity creation", ToastLength.Short).Show();
                 }
             } else {
                 Toast.MakeText(this, "Invalid IP adress, port or ID", ToastLength.Short).Show();
             }
                 
-        }
-
-        private void sendMessage(string message)
-        {
-            byte[] msg = System.Text.Encoding.Unicode.GetBytes(message);
-            stm.Write(msg, 0, msg.Length);
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
